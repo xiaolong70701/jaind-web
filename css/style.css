@@ -191,14 +191,25 @@ h2 {
 	border: none;
 }
 
+h1 {
+	font-size: 2.5rem;
+}
+
+.button_container.active {
+	right: 15px;
+}
+
 @media (max-width: 767px) {
 	h1 {
-		font-size: 2.5rem;
+		/* 適用於手機和平板的標題字體大小 */
+		font-size: 2rem;
 	}
 	.button_container.active {
-		right: 15px;
+		/* 適用於手機和平板的 .button_container 元素右側位置 */
+		right: 10px;
 	}
 }
+
 
 .button_container.active .top {
 	transform: translateY(9px) translateX(0) rotate(45deg);
@@ -461,23 +472,24 @@ h2 {
 	margin-bottom: 1.25rem;
 }
 
-@media (max-width: 991px) {
-	.card-columns {
-		column-count: 1;
-	}
+@media (max-width: 767px) { /* 手機大小 */
+    .card-columns {
+        column-count: 1;
+    }
 }
 
-@media (min-width: 992px) {
-	.card-columns {
-		column-count: 2;
-	}
+@media (min-width: 768px) and (max-width: 991px) { /* 平板大小 */
+    .card-columns {
+        column-count: 2;
+    }
 }
 
-@media (min-width: 1200px) {
-	.card-columns {
-		column-count: 3;
-	}
+@media (min-width: 992px) { /* 電腦大小 */
+    .card-columns {
+        column-count: 3;
+    }
 }
+
 
 .card-hover img {
 	transition: filter .5s ease-in-out;
@@ -748,12 +760,22 @@ h2 {
 	padding-bottom: 7rem;
 }
 
-@media (max-width: 767px) {
+/* 平板畫面 */
+@media (max-width: 991px) {
 	.footer {
-		font-size: 1.4em;
-		line-height: 180%;
+		font-size: 0.9em;
+		line-height: 160%;
 	}
 }
+
+/* 手機畫面 */
+@media (max-width: 767px) {
+	.footer {
+		font-size: 0.8em;
+		line-height: 170%;
+	}
+}
+
 
 .footer a:link,
 .footer a:hover,
